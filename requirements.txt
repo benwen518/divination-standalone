@@ -1,0 +1,2 @@
+# Vercel部署所需的最小依赖
+# 注意：Vercel的Python运行时已包含标准库模块

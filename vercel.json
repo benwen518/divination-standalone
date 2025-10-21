@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/divine.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/ai.py", 
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/hex.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/divine/coin",
+      "dest": "/api/divine.py"
+    },
+    {
+      "src": "/api/ai",
+      "dest": "/api/ai.py"
+    },
+    {
+      "src": "/api/hex/(.*)",
+      "dest": "/api/hex.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/static/$1"
+    }
+  ],
+  "env": {
+    "SILICONFLOW_API_KEY": "@siliconflow_api_key"
+  },
+  "functions": {
+    "api/divine.py": {
+      "maxDuration": 30
+    },
+    "api/ai.py": {
+      "maxDuration": 30
+    },
+    "api/hex.py": {
+      "maxDuration": 30
+    },
+    "api/index.py": {
+      "maxDuration": 30
+    }
+  }
+}
