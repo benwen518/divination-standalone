@@ -25,22 +25,5 @@
       "src": "/(.*)",
       "dest": "/static/$1"
     }
-  ],
-  "env": {
-    "SILICONFLOW_API_KEY": "@siliconflow_api_key"
-  },
-  "functions": {
-    "api/divine.py": {
-      "maxDuration": 30
-    },
-    "api/ai.py": {
-      "maxDuration": 30
-    },
-    "api/hex.py": {
-      "maxDuration": 30
-    },
-    "api/index.py": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
