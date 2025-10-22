@@ -484,7 +484,7 @@ function showResult(result) {
 // 动态加载易经基础库
 async function loadIchingData() {
     try {
-        const res = await fetch('iching_basic.json');
+        const res = await fetch('/static/iching_basic.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         ichingData = await res.json();
     } catch (e) {
